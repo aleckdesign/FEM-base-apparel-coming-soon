@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/sass/file_manifest.scss" />
+
+    <script defer src="./main.js"></script>
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="./images/logo.svg" alt="" class="logo" />
+      <div class="content-left">
+        <div class="heading">
+          <h1 class="heading__title"><span>We're</span> coming soon</h1>
+          <p class="heading__text">
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+        </div>
+
+        <form action="submit" class="form">
+          <input
+            type="email"
+            class="form__input"
+            placeholder="Email Address"
+            aria-label="Provide your email"
+          />
+          <button class="form__btn">
+            <img src="./images/icon-arrow.svg" alt="" class="form__arrow" />
+          </button>
+          <img
+            src="./images/icon-error.svg"
+            alt=""
+            class="form__error-icon hidden"
+          />
+          <p class="form__error-text hidden">Please provide a valid email.</p>
+          <p class="form__success hidden">Thank you! (page will refresh)</p>
+        </form>
+      </div>
+      <div class="content-right"></div>
+    </div>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/aleckdesign"
+          >aleckdesign</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>

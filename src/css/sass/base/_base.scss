@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 70%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 55%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+}

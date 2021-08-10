@@ -1,0 +1,181 @@
+@use 'abstracts/variables' as *;
+
+.container {
+  min-height: 100vh;
+  //   margin-bottom: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 30% 1fr minmax(min-content, max-content) 35%;
+  grid-template-rows: min-content;
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 1fr 35% 1fr minmax(min-content, max-content) 50%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 100%;
+    grid-template-rows: min-content 30vh min-content 15vh;
+  }
+}
+
+.logo {
+  margin-top: 6vh;
+  grid-column: 2/3;
+
+  @media only screen and (max-width: 800px) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    margin-bottom: 5vh;
+    padding-left: 4rem;
+  }
+}
+
+.content-left {
+  grid-column: 2/3;
+  // grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media only screen and (max-width: 800px) {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.heading {
+  margin-bottom: 2.5rem;
+
+  @media only screen and (max-width: 800px) {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 5rem;
+    margin-bottom: 2.5rem;
+    max-width: 20rem;
+    letter-spacing: 1.5rem;
+
+    @media only screen and (min-width: 1200px) {
+      font-size: 6rem;
+    }
+
+    @media only screen and (max-width: 800px) {
+      max-width: min-content;
+      font-size: 5rem;
+    }
+
+    & span {
+      font-weight: 300;
+      color: $clr-desat-red;
+    }
+  }
+
+  &__text {
+    color: $clr-desat-red;
+    line-height: 2.5rem;
+    max-width: 40rem;
+  }
+}
+
+.content-right {
+  grid-column: 5/6;
+  grid-row: 1 / span 2;
+
+  background-image: url(/images/hero-desktop.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  @media only screen and (max-width: 800px) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    background-image: url(/images/hero-mobile.jpg);
+  }
+}
+
+.form {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 40rem;
+
+  &__input {
+    height: 5rem;
+    padding: 2rem;
+    width: 100%;
+    border-radius: 2.5rem;
+    border: 1px solid $clr-desat-red;
+    color: $clr-desat-red;
+
+    &:focus {
+      outline: none;
+      color: black;
+    }
+  }
+
+  &__btn {
+    border-radius: 2.5rem;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    border: none;
+    color: transparent;
+    background-image: linear-gradient($grad-pink);
+    width: 25%;
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem rgba($clr-desat-red, 0.6);
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__error-icon {
+    position: absolute;
+    right: 35%;
+  }
+
+  &__error-text {
+    position: absolute;
+    font-size: 1.4rem;
+    left: 2rem;
+    top: 6rem;
+    color: $clr-dull-red;
+  }
+
+  &__success {
+    position: absolute;
+    font-size: 1.4rem;
+    left: 2rem;
+    top: 6rem;
+    color: green;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.invalid {
+  border: 2px solid $clr-dull-red;
+}
+
+.valid {
+  border: 1px solid $clr-desat-red;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
